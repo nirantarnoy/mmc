@@ -149,12 +149,11 @@ class PurchController extends Controller
                 if ($prod_id != null) {
                    // print_r(\Yii::$app->request->post());return;
                   //  print_r($prod_id);return;
-                    \common\models\PurchLine::deleteAll(['purch_id' => $model->id]);
                     for ($i = 0; $i <= count($prod_id) - 1; $i++) {
                         if ($prod_id[$i] == null || $prod_id[$i] == '') continue;
 
                         $line_total_new = str_replace(',', '', $line_total[$i]);
-
+                        \common\models\PurchLine::deleteAll(['purch_id' => $model->id]);
 
 //                        $model_check = \common\models\PurchLine::find()->where(['purch_id' => $model->id, 'product_id' => $prod_id[$i]])->one();
 //                        if ($model_check) {
