@@ -13,6 +13,8 @@ use yii\web\UploadedFile;
 use yii\web\ForbiddenHttpException;
 use yii\filters\AccessControl;
 
+date_default_timezone_set('Asia/Bangkok');
+
 /**
  * PickingController implements the CRUD actions for Picking model.
  */

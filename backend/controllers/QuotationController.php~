@@ -11,7 +11,6 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
-date_default_timezone_set('Asia/Bangkok');
 /**
  * QuotationController implements the CRUD actions for Quotation model.
  */
