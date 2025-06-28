@@ -231,7 +231,7 @@ class DbbackupController extends Controller
     {
         $host = "localhost";
         $username = "zigpszw1_admin_root";
-        $password = "eLmsNn@;q~XlPF*?";
+        $password = "";
       //  $database_name = "admin_icesystem";
         $database_name = "zigpszw1_mmc_db";
         $date_string = time();
