@@ -217,8 +217,6 @@ $is_pos_user = 0;
             }
         });
 
-        //dd
-
         //--- end active menu
 
         const Toast = Swal.mixin({
