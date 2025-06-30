@@ -11,6 +11,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
+date_default_timezone_set('Asia/Bangkok');
 /**
  * QuotationController implements the CRUD actions for Quotation model.
  */
@@ -29,7 +30,7 @@ class QuotationController extends Controller
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        'delete' => ['POST'],
+                        'delete' => ['POST','GET'],
                     ],
                 ],
             ]
@@ -222,7 +223,7 @@ class QuotationController extends Controller
             $xdate = explode('-', $model->quotation_date);
             $t_date = date('Y-m-d');
             if (count($xdate) > 1) {
-                $t_date = $xdate[2] . '-' . $xdate[1] . '-' . $xdate[0];
+                $t_date = $xdate[1] . '-' . $xdate[2] . '-' . $xdate[3];
             }
 
             $line_product_id = \Yii::$app->request->post('line_product_id');
@@ -237,7 +238,7 @@ class QuotationController extends Controller
             $line_product_size = \Yii::$app->request->post('line_product_size');
             $line_product_mat = \Yii::$app->request->post('line_product_mat');
 
-            $model->quotation_date = date('Y-m-d', strtotime($t_date));
+            $model->quotation_date = \Yii::$app->formatter->asDate($this->quotation_date, 'php:Y-m-d'); ;//date('Y-m-d', strtotime($t_date));
             if ($model->save(false)) {
                 $total_all = 0;
                 if ($line_product_id != null) {
