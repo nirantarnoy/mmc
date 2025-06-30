@@ -169,7 +169,7 @@ class QuotationController extends Controller
              //   print_r($file_data);return;
 
                 $model->quotation_no = $model::getLastNo();
-                $model->quotation_date = \Yii::$app->formatter->asDate($this->quotation_date, 'php:Y-m-d');;// date('Y-m-d', strtotime($t_date));
+                $model->quotation_date = \Yii::$app->formatter->asDate($model->quotation_date, 'php:Y-m-d');;// date('Y-m-d', strtotime($t_date));
                 $model->status = 0;
                 if ($model->save(false)) {
                     $total_all = 0;
@@ -238,7 +238,7 @@ class QuotationController extends Controller
             $line_product_size = \Yii::$app->request->post('line_product_size');
             $line_product_mat = \Yii::$app->request->post('line_product_mat');
 
-            $model->quotation_date = \Yii::$app->formatter->asDate($this->quotation_date, 'php:Y-m-d'); ;//date('Y-m-d', strtotime($t_date));
+            $model->quotation_date = \Yii::$app->formatter->asDate($model->quotation_date, 'php:Y-m-d'); ;//date('Y-m-d', strtotime($t_date));
             if ($model->save(false)) {
                 $total_all = 0;
                 if ($line_product_id != null) {

@@ -223,7 +223,7 @@ class QuotationController extends Controller
             $xdate = explode('-', $model->quotation_date);
             $t_date = date('Y-m-d');
             if (count($xdate) > 1) {
-                $t_date = $xdate[1] . '-' . $xdate[2] . '-' . $xdate[3];
+                $t_date = $xdate[2] . '-' . $xdate[1] . '-' . $xdate[0];
             }
 
             $line_product_id = \Yii::$app->request->post('line_product_id');
