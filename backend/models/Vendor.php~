@@ -106,7 +106,7 @@ class Vendor extends \common\models\Vendor
         $name = '';
         $model = Vendor::find()->where(['id' => $id])->one();
         if($model != null){
-            $model_x = \backend\models\Paymentterm::find()->where(['id' => $model->payment_term_id])->one();
+            $model_x = \backend\models\PaymentTerm::find()->where(['id' => $model->payment_term_id])->one();
             if($model_x != null){
                 $name = $model_x->name;
             }
