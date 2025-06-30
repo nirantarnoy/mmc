@@ -219,7 +219,7 @@ class QuotationController extends Controller
         $model = $this->findModel($id);
         $model_detail = \common\models\QuotationLine::find()->where(['quotation_id' => $id])->all();
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
             $xdate = explode('-', $model->quotation_date);
             $t_date = date('Y-m-d');
             if (count($xdate) > 1) {
